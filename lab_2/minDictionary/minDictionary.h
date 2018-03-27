@@ -1,0 +1,17 @@
+#pragma once
+
+#include "stdafx.h"
+#include <fstream>
+#include <map>
+#include <iostream>
+#include <string>
+#include <Windows.h>
+
+using namespace std;
+
+typedef map<string, string> MapStrings;
+
+void FillOutMapFromFile(string fileName, MapStrings &dictionary);
+void DialogWithUser(MapStrings dictionary);
+bool NeedSave();
+void UpdateDictionaryFile(string fileName);
