@@ -16,7 +16,6 @@
 
 using namespace std;
 
-
 int main(int argc, char* argv[])
 {
 	SetConsoleOutputCP(1251);
@@ -30,22 +29,24 @@ int main(int argc, char* argv[])
 
 	string dictionaryFileName = argv[1];
 
-	MapStrings dictionary;
-
-	FillOutMapFromFile(dictionaryFileName, dictionary);
-	DialogWithUser(dictionary);
+	MapStrings dictionary = FillOutMapFromFile(dictionaryFileName);
+	bool resultDialog = DialogWithUser(dictionary);
 
 	string stringOfUser = "";
-	cout << "> ";
-	getline(cin, stringOfUser);
 
-	if (NeedSave(stringOfUser))
+	if (resultDialog)
 	{
-		UpdateDictionaryFile(dictionaryFileName, dictionary);
-		cout << "Изменения сохранены. До свидания.";
-	} else
-	{
-		cout << "Изменения не были сохранены. До свидания.";
+		cout << "> ";
+		getline(cin, stringOfUser);
+
+		if (NeedSave(stringOfUser))
+		{
+			UpdateDictionaryFile(dictionaryFileName, dictionary);
+			cout << "Изменения сохранены. До свидания.";
+		} else
+		{
+			cout << "Изменения не были сохранены. До свидания.";
+		}
 	}
 	dictionary.clear();
 	return 0;
