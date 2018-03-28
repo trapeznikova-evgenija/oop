@@ -12,6 +12,6 @@ using namespace std;
 typedef map<string, string> MapStrings;
 
 void FillOutMapFromFile(string fileName, MapStrings &dictionary);
-void DialogWithUser(MapStrings dictionary);
-bool NeedSave();
-void UpdateDictionaryFile(string fileName);
+void DialogWithUser(MapStrings &dictionary);
+bool NeedSave(string stringOfUser);
+void UpdateDictionaryFile(string fileName, MapStrings &dictionary);

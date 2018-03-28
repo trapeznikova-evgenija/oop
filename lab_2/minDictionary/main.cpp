@@ -19,7 +19,6 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	//setlocale(LC_ALL, "rus");
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
@@ -35,15 +34,20 @@ int main(int argc, char* argv[])
 
 	FillOutMapFromFile(dictionaryFileName, dictionary);
 	DialogWithUser(dictionary);
-	if (NeedSave())
-	{
 
+	string stringOfUser = "";
+	cout << "> ";
+	getline(cin, stringOfUser);
+
+	if (NeedSave(stringOfUser))
+	{
+		UpdateDictionaryFile(dictionaryFileName, dictionary);
+		cout << "Изменения сохранены. До свидания.";
 	} else
 	{
 		cout << "Изменения не были сохранены. До свидания.";
 	}
-
-
+	dictionary.clear();
 	return 0;
 }
 
