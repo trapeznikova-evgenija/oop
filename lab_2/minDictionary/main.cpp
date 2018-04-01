@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 	{
 		cout << "> ";
 		getline(cin, stringOfUser);
-
+		
 		if (NeedSave(stringOfUser))
 		{
 			UpdateDictionaryFile(dictionaryFileName, dictionary);
