@@ -13,13 +13,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "minDictionary", "minDiction
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "minDictionaryTest", "minDictionaryTest\minDictionaryTest.vcxproj", "{5F0A402F-1086-42A2-8518-BD4CF40D92D4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "primeNumberGenerator", "primeNumberGenerator\primeNumberGenerator.vcxproj", "{DC862376-3CC0-4E96-B33E-661B03DA0ED4}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "primeNumberGeneratorTest", "primeNumberGeneratorTest\primeNumberGeneratorTest.vcxproj", "{720F1D97-317B-4230-8759-4403D15AC33A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "urlParser", "urlParser\urlParser.vcxproj", "{2DED4DB5-525A-4763-9BAF-1AFF199E3C9E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "urlParserTest", "urlParserTest\urlParserTest.vcxproj", "{3E6AD8A3-AF8D-4CA3-A772-FEB18983E2CB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "primeNumberGenerator", "primeNumberGenerator\primeNumberGenerator.vcxproj", "{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,14 +69,6 @@ Global
 		{5F0A402F-1086-42A2-8518-BD4CF40D92D4}.Release|x64.Build.0 = Release|x64
 		{5F0A402F-1086-42A2-8518-BD4CF40D92D4}.Release|x86.ActiveCfg = Release|Win32
 		{5F0A402F-1086-42A2-8518-BD4CF40D92D4}.Release|x86.Build.0 = Release|Win32
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Debug|x64.ActiveCfg = Debug|x64
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Debug|x64.Build.0 = Debug|x64
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Debug|x86.ActiveCfg = Debug|Win32
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Debug|x86.Build.0 = Debug|Win32
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Release|x64.ActiveCfg = Release|x64
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Release|x64.Build.0 = Release|x64
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Release|x86.ActiveCfg = Release|Win32
-		{DC862376-3CC0-4E96-B33E-661B03DA0ED4}.Release|x86.Build.0 = Release|Win32
 		{720F1D97-317B-4230-8759-4403D15AC33A}.Debug|x64.ActiveCfg = Debug|x64
 		{720F1D97-317B-4230-8759-4403D15AC33A}.Debug|x64.Build.0 = Debug|x64
 		{720F1D97-317B-4230-8759-4403D15AC33A}.Debug|x86.ActiveCfg = Debug|Win32
@@ -101,6 +93,14 @@ Global
 		{3E6AD8A3-AF8D-4CA3-A772-FEB18983E2CB}.Release|x64.Build.0 = Release|x64
 		{3E6AD8A3-AF8D-4CA3-A772-FEB18983E2CB}.Release|x86.ActiveCfg = Release|Win32
 		{3E6AD8A3-AF8D-4CA3-A772-FEB18983E2CB}.Release|x86.Build.0 = Release|Win32
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Debug|x64.ActiveCfg = Debug|x64
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Debug|x64.Build.0 = Debug|x64
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Debug|x86.ActiveCfg = Debug|Win32
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Debug|x86.Build.0 = Debug|Win32
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Release|x64.ActiveCfg = Release|x64
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Release|x64.Build.0 = Release|x64
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Release|x86.ActiveCfg = Release|Win32
+		{3FECC659-DAC1-4A5B-ADD7-7AB3397C95E2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
-	
+
 	if (argc != 2)
 	{
 		cout << "Неправильный ввод. Пример: <primeNumberGenerator.exe> <upperBound>";
@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 
 	int upperBound = atoi(argv[1]);
 	GeneratePrimeNumberSet(upperBound);
-	//PrintSet(GeneratePrimeNumberSet(upperBound));
+	PrintSet(GeneratePrimeNumberSet(upperBound));
 
 	return 0;
 }
