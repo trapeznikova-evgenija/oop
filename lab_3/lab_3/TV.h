@@ -1,5 +1,4 @@
 #pragma once
-#include <Windows.h>
 using namespace std;
 
 class CTVSet
