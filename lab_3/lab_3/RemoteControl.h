@@ -12,7 +12,7 @@ public:
 	bool TurnOn();
 	bool TurnOff();
 	bool Info();
-	bool SelectChannel(int &channel);
+	bool SelectChannel(int channel);
 
 private:
 
@@ -22,4 +22,4 @@ private:
 };
 
 int DetermineChannel(string &userString);
-bool SelectedChannel(string &userCommand);
+bool IsSelectedChannel(string userCommand);

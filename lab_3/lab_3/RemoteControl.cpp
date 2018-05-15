@@ -41,7 +41,7 @@ bool CRemoteControl::Info()
 	return true;
 }
 
-bool CRemoteControl::SelectChannel(int &channel)
+bool CRemoteControl::SelectChannel(int channel)
 {
 	m_tv.SelectChannel(channel);
 	m_output << "Переключили на " << m_tv.GetChannel() << " канал" << endl;
@@ -58,7 +58,7 @@ int DetermineChannel(string &userString)
 	return channel;
 }
 
-bool SelectedChannel(string &userCommand)
+bool IsSelectedChannel(string userCommand)
 {
 	if (userCommand.find("SelectChannel") == -1)
 	{
