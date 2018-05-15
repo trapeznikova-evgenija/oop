@@ -1,11 +1,25 @@
 #pragma once
+#include <boost/noncopyable.hpp>
 using namespace std;
 
 class CTVSet;
 
-bool TurnOn(CTVSet & tv);
-bool TurnOff(CTVSet & tv);
-bool Info(CTVSet & tv);
-bool SelectChannel(CTVSet &tv, int channel);
+class CRemoteControl : boost::noncopyable
+{
+public:
+	CRemoteControl(CTVSet & tv, istream & input, ostream & output);
+
+	bool TurnOn();
+	bool TurnOff();
+	bool Info();
+	bool SelectChannel(int &channel);
+
+private:
+
+	CTVSet & m_tv;
+	istream & m_input;
+	ostream & m_output;
+};
 
 int DetermineChannel(string &userString);
+bool SelectedChannel(string &userCommand);

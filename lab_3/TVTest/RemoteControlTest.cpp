@@ -6,7 +6,7 @@ CTVSet tv;
 
 TEST_CASE("RemoteControl Tests")
 {
-	string command = "SelectChannel 5";
+	/*string command = "SelectChannel 5";
 	CHECK(DetermineChannel(command) == 5);
 
 	TurnOff(tv);
@@ -18,5 +18,11 @@ TEST_CASE("RemoteControl Tests")
 	TurnOff(tv);
 	TurnOn(tv);
 	CHECK(tv.GetChannel() == 45);
-
+	*/
 }
+
+TEST_CASE("DetermineChannel Function Test")
+{
+	
+}
+

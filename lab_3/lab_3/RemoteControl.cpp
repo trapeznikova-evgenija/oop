@@ -4,40 +4,47 @@
 
 using namespace std;
 
-bool TurnOn(CTVSet & tv)
+CRemoteControl::CRemoteControl(CTVSet & tv, istream & input, ostream & output) :
+	m_tv(tv),
+	m_input(input),
+	m_output(output)
 {
-	tv.TurnOn();
-	cout << "TV is turned on" << endl;
+}
+
+bool CRemoteControl::TurnOn()
+{
+	m_tv.TurnOn();
+	m_output << "TV is turned on" << endl;
 	return true;
 }
 
-bool TurnOff(CTVSet & tv)
+bool CRemoteControl::TurnOff()
 {
-	tv.TurnOff();
-	cout << "TV is turned off" << endl;
+	m_tv.TurnOff();
+	m_output << "TV is turned off" << endl;
 	return true;
 }
 
-bool Info(CTVSet & tv)
+bool CRemoteControl::Info()
 {
 	string info;
 
-	if (tv.isTurnedOn())
+	if (m_tv.isTurnedOn())
 	{
-		info = "TV is turned on\nChannel is: " + to_string(tv.GetChannel()) + "\n";
+		info = "TV is turned on\nChannel is: " + to_string(m_tv.GetChannel()) + "\n";
 	} else
 	{
 		info = "TV is turned off\n";
 	}
 
-	cout << info;
+	m_output << info;
 	return true;
 }
 
-bool SelectChannel(CTVSet &tv, int channel)
+bool CRemoteControl::SelectChannel(int &channel)
 {
-	tv.SelectChannel(channel);
-	cout << "Переключили на " << tv.GetChannel() << "канал" << endl;
+	m_tv.SelectChannel(channel);
+	m_output << "Переключили на " << m_tv.GetChannel() << " канал" << endl;
 	return true;
 }
 
@@ -49,4 +56,14 @@ int DetermineChannel(string &userString)
 	if (it != userString.end()) channel = atoi(userString.c_str() + (it - userString.begin()));
 	
 	return channel;
+}
+
+bool SelectedChannel(string &userCommand)
+{
+	if (userCommand.find("SelectChannel") == -1)
+	{
+		return false;
+	}
+
+	return true;
 }
