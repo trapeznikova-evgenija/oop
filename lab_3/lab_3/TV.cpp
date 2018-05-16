@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "TV.h"
 
+
 void CTVSet::TurnOff()
 {
 	m_isOn = false;

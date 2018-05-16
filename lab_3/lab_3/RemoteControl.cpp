@@ -44,7 +44,7 @@ bool CRemoteControl::Info()
 bool CRemoteControl::SelectChannel(int channel)
 {
 	m_tv.SelectChannel(channel);
-	m_output << "Переключили на " << m_tv.GetChannel() << " канал" << endl;
+	m_output << "Switched to " << m_tv.GetChannel() << " channel" << endl;
 	return true;
 }
 
