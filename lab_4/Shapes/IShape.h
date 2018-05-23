@@ -5,15 +5,11 @@ using namespace std;
 class IShape
 {
 public:
-	IShape(const string & outlineColor);
-	~IShape() = default;
-
 	virtual double GetArea() const = 0;
 	virtual double GetPerimeter() const = 0;
 	virtual string ToString() const = 0;
-
-	string GetOutlineColor() const;
+	virtual uint32_t GetOutlineColor() const = 0;
 
 private:
-	string m_outlineColor;
+	uint32_t m_outlineColor;
 };

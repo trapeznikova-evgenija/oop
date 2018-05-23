@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "CLineSegment.h"
 
-CLineSegment::CLineSegment(const CPoint startPoint, const CPoint endPoint, const string & outlineColor) 
+CLineSegment::CLineSegment(const CPoint startPoint, const CPoint endPoint, uint32_t & outlineColor) 
 	: m_startPoint(startPoint),
 	  m_endPoint(endPoint),
-	  IShape(outlineColor)
+	  CShape(outlineColor)
 {
 };
 
@@ -35,7 +35,14 @@ double CLineSegment::GetLengthLine() const
 
 string CLineSegment::ToString() const
 {
-	return "low";
+	  ostringstream strstream;
+	  strstream << "lineSegment " << "startPoint " << m_startPoint.m_x << ", " << m_startPoint.m_y
+		<< "endPoint " << m_endPoint.m_x << ", " << m_endPoint.m_y
+		<< "area " << GetArea() << "perimeter " << GetPerimeter()
+		<< "outlineColor " << GetOutlineColor() << endl;
+
+	  strstream << "sds";
+	return strstream.str();
 }
 
 
