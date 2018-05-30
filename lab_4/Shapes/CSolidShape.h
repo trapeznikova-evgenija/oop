@@ -5,12 +5,12 @@
 class CSolidShape : public ISolidShape, public CShape
 {
 public:
-	CSolidShape(uint32_t & outlineColor, uint32_t & fillColor);
+	CSolidShape(string & outlineColor, string & fillColor);
 
-	uint32_t GetOutlineColor() const override;
-	uint32_t GetFillColor() const override;
+	string GetOutlineColor() const override;
+	string GetFillColor() const override;
 
 private:
-	uint32_t m_fill_color;
+	string m_fill_color;
 };
 

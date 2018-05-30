@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CLineSegment.h"
 
-CLineSegment::CLineSegment(const CPoint startPoint, const CPoint endPoint, uint32_t & outlineColor) 
+CLineSegment::CLineSegment(const CPoint startPoint, const CPoint endPoint, string & outlineColor) 
 	: m_startPoint(startPoint),
 	  m_endPoint(endPoint),
 	  CShape(outlineColor)

@@ -5,7 +5,7 @@
 class CLineSegment : public CShape
 {
 public:
-	CLineSegment(const CPoint startPoint, const CPoint endPoint, uint32_t & outlineColor);
+	CLineSegment(const CPoint startPoint, const CPoint endPoint, string & outlineColor);
 
 	CPoint GetStartPoint() const;
 	CPoint GetEndPoint() const;

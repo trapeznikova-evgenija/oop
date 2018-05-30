@@ -4,11 +4,11 @@
 class CShape : public IShape
 {
 public:
-	CShape(uint32_t & outlineColor);
+	CShape(string & outlineColor);
 	
-	uint32_t GetOutlineColor() const override;
+	string GetOutlineColor() const override;
 
 
 private:
-	uint32_t m_outline_color;
+	string m_outline_color;
 };

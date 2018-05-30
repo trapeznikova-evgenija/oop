@@ -5,5 +5,5 @@ using namespace std;
 
 bool IsShapes(string const & commandLine)
 {
-	
+	return true;
 }

@@ -9,5 +9,5 @@ public:
 
 	ISolidShape() = default;
 
-	virtual uint32_t GetFillColor() const = 0;
+	virtual string GetFillColor() const = 0;
 };

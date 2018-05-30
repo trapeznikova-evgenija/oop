@@ -2,12 +2,11 @@
 #include "CTriangle.h"
 #include "CSolidShape.h"
 
-CTriangle::CTriangle(const CPoint& a, const CPoint& b, const CPoint& c, uint32_t& outlineColor, uint32_t& fillColor, const string& name) :
+CTriangle::CTriangle(const CPoint& a, const CPoint& b, const CPoint& c, string& outlineColor, string& fillColor) :
 	m_vertex_1(a),
 	m_vertex_2(b),
 	m_vertex_3(c),
-    CSolidShape(outlineColor, fillColor),
-	m_name(name)
+    CSolidShape(outlineColor, fillColor)
 {
 }
 
