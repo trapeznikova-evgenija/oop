@@ -1,3 +1,4 @@
+
 #include "CSolidShape.h"
 
 class CRectangle: public CSolidShape

@@ -6,12 +6,12 @@
 
 using namespace std;
 
-class CShapesRecorder
+/*class CShapesRecorder
 {
 public:
 	CShapesRecorder(istream & in, ostream & out, stringstream & strstream);
 
-	bool HandleCommand();
+
 	bool CreateTriangle();
 	bool CreateRectangle();
 	bool CreateCircle();
@@ -19,12 +19,10 @@ public:
 	//vector<unique_ptr<CShape>> GetShapesArray();
 
 private:
-	typedef map<string, function<bool(stringstream & args)>> ActionMap;
 
-	vector<unique_ptr<CShape>> m_shapesArray;
+	//vector<unique_ptr<CShape>> m_shapesArray;
 
 	istream & m_input;
 	ostream & m_output;
-
-	const ActionMap m_actionMap;
 };
+*/

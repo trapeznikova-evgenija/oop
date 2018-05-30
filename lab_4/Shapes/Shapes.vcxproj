@@ -148,10 +148,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CCircle.h" />
+    <ClInclude Include="CHandler.h" />
     <ClInclude Include="CLineSegment.h" />
     <ClInclude Include="CPoint.h" />
     <ClInclude Include="CRectangle.h" />
     <ClInclude Include="CShape.h" />
+    <ClInclude Include="CShapesCreator.h" />
     <ClInclude Include="CShapesRecorder.h" />
     <ClInclude Include="CSolidShape.h" />
     <ClInclude Include="CTriangle.h" />
@@ -163,10 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCircle.cpp" />
+    <ClCompile Include="CHandler.cpp" />
     <ClCompile Include="CLineSegment.cpp" />
     <ClCompile Include="CPoint.cpp" />
     <ClCompile Include="CRectangle.cpp" />
     <ClCompile Include="CShape.cpp" />
+    <ClCompile Include="CShapesCreator.cpp" />
     <ClCompile Include="CShapesRecorder.cpp" />
     <ClCompile Include="CTriangle.cpp" />
     <ClCompile Include="CSolidShape.cpp" />

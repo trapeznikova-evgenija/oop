@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CShapesRecorder.h"
 
-bool CShapesRecorder::CreateTriangle()
+/*bool CShapesRecorder::CreateTriangle()
 {
 	m_output << "You choose triangle " << endl;
 	m_output << "Enter shape parameter" << endl;
@@ -19,7 +19,7 @@ bool CShapesRecorder::CreateTriangle()
 	strstream >> vertex1.m_x >> vertex1.m_y >> vertex2.m_x >> vertex2.m_y >> vertex3.m_x >> vertex2.m_y >> outlineColor >> fillColor;
 			
 	auto trianglePtr = make_unique<CTriangle>(vertex1, vertex2, vertex3, outlineColor, fillColor);
-	m_shapesArray.push_back(move(trianglePtr));
+	//m_shapesArray.push_back(move(trianglePtr));
 	
 	return true;
 }
@@ -42,7 +42,7 @@ bool CShapesRecorder::CreateRectangle()
 	strstream >> leftTop.m_x >> leftTop.m_y >> width >> height >> outlineColor >> fillColor;
 
 	auto rectanglePtr = make_unique<CRectangle>(leftTop, width, height, outlineColor, fillColor);
-	m_shapesArray.push_back(move(rectanglePtr));
+	//m_shapesArray.push_back(move(rectanglePtr));
 
 	return true;
 }
@@ -64,7 +64,7 @@ bool CShapesRecorder::CreateCircle()
 	strstream >> center.m_x >> center.m_y >> radius >> outlineColor >> fillColor;
 
 	auto circlePtr = make_unique<CCircle>(center, radius, outlineColor, fillColor);
-	m_shapesArray.push_back(move(circlePtr));
+	//m_shapesArray.push_back(move(circlePtr));
 
 	return true;
 }
@@ -72,46 +72,12 @@ bool CShapesRecorder::CreateCircle()
 
 CShapesRecorder::CShapesRecorder(istream & in, ostream & out, stringstream & strstream) :
 	m_input(in),
-	m_output(out),
-	m_actionMap({
-		 { "triangle", [this](stringstream & strstream)
-					   {
-						 return CreateTriangle();
-					   }
-		 },
-		 { "rectangle", [this](stringstream & strstream)
-					   {
-						   return CreateRectangle();
-					   }
-		 },
-         { "circle", [this](stringstream & strstream)
-					   {
-						   return CreateCircle();
-					   }
-		 }
-	})
+	m_output(out)
 {
 };
+*/
 
-bool CShapesRecorder::HandleCommand()
-{
-	string commandLine;
-	getline(m_input, commandLine);
-	stringstream strm(commandLine);
-
-	string action;
-	strm >> action;
-
-	auto it = m_actionMap.find(action);
-	if (it != m_actionMap.end())
-	{
-		return it->second(strm);
-	}
-
-	return false;
-}
-
-//vector<unique_ptr<CShape>> CShapesRecorder::GetShapesArray()
+//vector<unique_ptr<cshape>> cshapesrecorder::getshapesarray()
 //{
-//	return m_shapesArray;
+//	return m_shapesarray;
 //}
