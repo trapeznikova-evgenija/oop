@@ -6,15 +6,15 @@
 
 using namespace std;
 
-/*class CShapesCreator
+class CShapesCreator
 {
 public:
-	CShapesCreator();
+	CShapesCreator() = default;
 
-	unique_ptr<CShape> GetTriangle();
-	unique_ptr<CShape> GetRectangle();
-	unique_ptr<CShape> GetCircle();
+	unique_ptr<CShape> GetTriangle(string & paramsStr);
+	unique_ptr<CShape> GetRectangle(string & paramsStr);
+	unique_ptr<CShape> GetCircle(string & paramsStr);
 
 private:
 
-}; */
+};

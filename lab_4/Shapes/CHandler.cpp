@@ -1,34 +1,59 @@
 #include "stdafx.h"
+#include "CShapesCreator.h"
 #include "CHandler.h"
 
-CHandler::CHandler(istream & in, ostream & out, stringstream & strstream)
+CHandler::CHandler(CShapesCreator & shapesCreator, istream & in, ostream & out, stringstream & strstream)
 	:m_input(in),
+	 m_output(out),
 	m_actionMap({
-		{ "triangle", [this](stringstream & strstream)
+		{ "triangle", [this](stringstream & strstream, CShapesCreator & shapesCreator)
 					  {
-						return true; //CreateTriangle();
+						string paramsStr = strstream.str();
+						if (CHandler::CheckValidityTriangle(paramsStr))
+						{
+							m_shapesArray.push_back(move(shapesCreator.GetTriangle(paramsStr)));
+							return true;
+						} else
+						{
+							return false;
+						}
 					  }
 		},
-		{ "rectangle", [this](stringstream & strstream)
+		{ "rectangle", [this](stringstream & strstream,  CShapesCreator & shapesCreator)
 					   {
-						 return true; // CreateRectangle();
+						  string paramsStr = strstream.str();
+						  if (CHandler::CheckValidityRectangle(paramsStr))
+						  {
+							  m_shapesArray.push_back(move(shapesCreator.GetRectangle(paramsStr)));
+							  return true;
+						  } else
+						  {
+							  return false;
+						  }
 					   }
 		},
-		{ "circle", [this](stringstream & strstream)
+		{ "circle", [this](stringstream & strstream,  CShapesCreator & shapesCreator)
 					{
-					  return true; //CreateCircle();
+				      string paramsStr = strstream.str();
+					  if (CHandler::CheckValidityCircle(paramsStr))
+					  {
+						m_shapesArray.push_back(move(shapesCreator.GetCircle(paramsStr)));
+					    return true;
+					  } else
+					  {
+					    return false;
+					  }
 					}
-		}
+		},
 		})
 {
 }
 
-bool CHandler::HandleCommand()
+bool CHandler::HandleCommand(CShapesCreator & shapesCreator)
 {
 	string commandLine;
 	getline(m_input, commandLine);
 	stringstream strm(commandLine);
-	cout << "commandLine " << commandLine;
 
 	string action;
 	strm >> action;
@@ -36,8 +61,34 @@ bool CHandler::HandleCommand()
 	auto it = m_actionMap.find(action);
 	if (it != m_actionMap.end())
 	{
-		return it->second(strm);
+		return it->second(strm, shapesCreator);
 	}
 
 	return false;
+}
+
+bool CHandler::CheckValidityTriangle(string & params)
+{
+
+	return true;
+}
+
+bool CHandler::CheckValidityCircle(string & params)
+{
+	return true;
+}
+
+bool CHandler::CheckValidityRectangle(string & params)
+{
+	return true;
+}
+
+bool CHandler::CheckValidityLineSegment(string & params)
+{
+	return true;
+}
+
+const vector<unique_ptr<CShape>>& CHandler::GetShapesArray() const
+{
+	return m_shapesArray;
 }
