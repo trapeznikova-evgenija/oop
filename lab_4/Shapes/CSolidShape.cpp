@@ -17,4 +17,3 @@ string CSolidShape::GetFillColor() const
 {
 	return m_fill_color;
 }
-

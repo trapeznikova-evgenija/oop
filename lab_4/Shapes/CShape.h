@@ -8,7 +8,6 @@ public:
 	
 	string GetOutlineColor() const override;
 
-
 private:
 	string m_outline_color;
 };
