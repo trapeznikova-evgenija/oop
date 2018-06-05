@@ -43,7 +43,7 @@ double CTriangle::GetArea() const
 
 double CTriangle::GetLength(CPoint const & vertex1, CPoint const & vertex2) const 
 {
-	return sqrt(pow((vertex2.m_x - vertex1.m_x), 2) + pow((vertex2.m_y - vertex2.m_y), 2));
+	return sqrt(pow((vertex2.m_x - vertex1.m_x), 2) + pow((vertex2.m_y - vertex1.m_y), 2));
 }
 
 string CTriangle::ToString() const
@@ -51,7 +51,7 @@ string CTriangle::ToString() const
 	ostringstream str;
 
 	str << "triangle " << "perimetr " << GetPerimeter() << " area " << GetArea()
-		<< "outlineColor " << GetOutlineColor() << " fillColor " << GetFillColor() << endl;
+		<< " outlineColor " << GetOutlineColor() << " fillColor " << GetFillColor();
 
 	return str.str();
 }

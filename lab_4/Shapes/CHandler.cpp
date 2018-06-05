@@ -92,3 +92,36 @@ const vector<unique_ptr<CShape>>& CHandler::GetShapesArray() const
 {
 	return m_shapesArray;
 }
+
+const string CHandler::GetShapeWithMinPerimetr() const
+{
+	auto FindMinElement = [](const unique_ptr<CShape>& shapeOne, const unique_ptr<CShape>& shapeTwo)
+	{
+		return shapeOne->GetPerimeter() < shapeTwo->GetPerimeter();
+	};
+
+	auto result = min_element(m_shapesArray.begin(), m_shapesArray.end(), FindMinElement);
+
+	if (result != m_shapesArray.end())
+	{
+		cout << "Shape with min perimetr " << endl;
+		return (*result)->ToString();
+	}
+    return "";
+}
+
+const void CHandler::GetShapeWithMaxArea() const
+{
+	auto FinMaxElement = [](const unique_ptr<CShape>& shapeOne, const unique_ptr<CShape>& shapeTwo)
+	{
+		return shapeOne->GetArea() > shapeTwo->GetArea();
+	};
+
+	auto result = max_element(m_shapesArray.begin(), m_shapesArray.end(), FinMaxElement);
+
+	if (result != m_shapesArray.end())
+	{
+		cout << "Shape with max area " << endl;
+		cout << (*result)->ToString() << endl;
+	}
+}

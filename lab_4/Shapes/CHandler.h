@@ -19,7 +19,8 @@ public:
 	bool CheckValidityLineSegment(string & params);
 
 	const vector<unique_ptr<CShape>>& GetShapesArray() const;
-
+	const string GetShapeWithMinPerimetr() const;
+	const void GetShapeWithMaxArea() const;
 
 private:
 	typedef map<string, function<bool(stringstream & args, CShapesCreator & shapesCreator)>> ActionMap;

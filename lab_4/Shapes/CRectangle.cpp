@@ -8,8 +8,8 @@ CRectangle::CRectangle(const CPoint & leftTop, const double & width, const doubl
 	m_leftTop(leftTop),
 	CSolidShape(outlineColor, fillColor)
 {
-
 }
+
 
 CPoint CRectangle::GetLeftTop() const
 {
@@ -48,7 +48,7 @@ string CRectangle::ToString() const
 	str << "rectangle " << "perimetr " << GetPerimeter() << " area " << GetArea()
 		<< " outlineColor " << GetOutlineColor() << " fillColor " << GetFillColor()
 		<< " width " << m_width << " height " << m_height
-		<< " left top " << m_leftTop.m_x << " " << m_leftTop.m_y << endl;
+		<< " left top " << m_leftTop.m_x << " " << m_leftTop.m_y;
 
 	return str.str();
 } 

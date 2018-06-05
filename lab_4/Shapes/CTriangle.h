@@ -14,9 +14,8 @@ public:
 	CPoint GetMiddlePoint() const;
 	CPoint GetEndPoint() const;
 
-private:
-
 	double GetLength(CPoint const& vertex1, CPoint  const& vertex2) const;
+private:
 
 	CPoint m_vertex_1;
 	CPoint m_vertex_2;

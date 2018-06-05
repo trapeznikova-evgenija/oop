@@ -10,6 +10,7 @@ CSolidShape::CSolidShape(string & outlineColor, string &fillColor) :
 
 string CSolidShape::GetOutlineColor() const
 {
+	//cout << CShape::GetOutlineColor();
 	return CShape::GetOutlineColor();
 }
 
