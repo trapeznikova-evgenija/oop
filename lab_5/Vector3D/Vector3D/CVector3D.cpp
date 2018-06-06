@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "CVector3D.h"
 #include "Tools.h"
 
@@ -125,4 +125,21 @@ istream& operator >>(istream& str, CVector3D vector)
 {
 	str >> vector.x >> vector.y >> vector.z;
 	return str;
+}
+
+double DotProduct(CVector3D const& vector1, CVector3D const& vector2)
+{
+	return (vector1.x * vector2.x) + (vector1.y * vector2.y) + (vector1.z * vector2.z);
+}
+
+CVector3D CrossProduct(CVector3D const& vector1, CVector3D const& vector2)
+{
+	CVector3D resultVector(vector1.y * vector2.z - vector1.z * vector2.y, vector1.z * vector2.x - vector1.x * vector2.z, vector1.x * vector2.y - vector1.y * vector2.x);
+	return resultVector;
+}
+
+CVector3D Normalize(CVector3D const& vector)
+{
+	CVector3D unitVector = vector / sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
+	return unitVector;
 }

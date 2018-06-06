@@ -32,5 +32,8 @@ private:
 	double m_length;
 };
 
-ostream operator <<(ostream* str, CVector3D vector);
-istream operator >>(istream* str, CVector3D vector);
+ostream& operator <<(ostream& str, CVector3D vector);
+istream& operator >>(istream& str, CVector3D vector);
+double DotProduct(CVector3D const& vector1, CVector3D const& vector2);
+CVector3D CrossProduct(CVector3D const& vector1, CVector3D const& vector2);
+CVector3D Normalize(CVector3D const& vector);
