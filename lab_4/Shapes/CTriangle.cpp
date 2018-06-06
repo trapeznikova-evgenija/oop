@@ -38,7 +38,7 @@ double CTriangle::GetArea() const
 	double b = GetLength(m_vertex_2, m_vertex_3);
 	double c = GetLength(m_vertex_3, m_vertex_1);
 	
-	return	sqrt(p*(p - a)*(p - b)*(p - c));
+	return  sqrt(p*(p - a)*(p - b)*(p - c));
 }
 
 double CTriangle::GetLength(CPoint const & vertex1, CPoint const & vertex2) const 

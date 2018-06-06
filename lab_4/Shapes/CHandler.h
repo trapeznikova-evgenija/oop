@@ -18,14 +18,14 @@ public:
 	bool CheckValidityCircle(string & params);
 	bool CheckValidityLineSegment(string & params);
 
-	const vector<unique_ptr<CShape>>& GetShapesArray() const;
+	const vector<unique_ptr<IShape>>& GetShapesArray() const;
 	const string GetShapeWithMinPerimetr() const;
 	const void GetShapeWithMaxArea() const;
 
 private:
 	typedef map<string, function<bool(stringstream & args, CShapesCreator & shapesCreator)>> ActionMap;
 
-	vector<unique_ptr<CShape>> m_shapesArray;
+	vector<unique_ptr<IShape>> m_shapesArray;
 	istream & m_input;
 	ostream & m_output;
 	const ActionMap m_actionMap;

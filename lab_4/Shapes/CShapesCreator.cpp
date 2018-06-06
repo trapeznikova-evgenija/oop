@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CShapesCreator.h"
 
-unique_ptr<CShape> CShapesCreator::GetCircle(string & paramsStr)
+unique_ptr<IShape> CShapesCreator::GetCircle(string & paramsStr)
 {
 	stringstream strm(paramsStr);
 
@@ -16,7 +16,7 @@ unique_ptr<CShape> CShapesCreator::GetCircle(string & paramsStr)
 	return make_unique<CCircle>(center, radius, outlineColor, fillColor);
 }
 
-unique_ptr<CShape> CShapesCreator::GetRectangle(string &paramsStr)
+unique_ptr<IShape> CShapesCreator::GetRectangle(string &paramsStr)
 {
 	stringstream strm(paramsStr);
 
@@ -32,7 +32,7 @@ unique_ptr<CShape> CShapesCreator::GetRectangle(string &paramsStr)
 	return make_unique<CRectangle>(leftTop, width, height, outlineColor, fillColor);
 }
 
-unique_ptr<CShape> CShapesCreator::GetTriangle(string &paramsStr)
+unique_ptr<IShape> CShapesCreator::GetTriangle(string &paramsStr)
 {
 	stringstream strm(paramsStr);
 
@@ -43,6 +43,6 @@ unique_ptr<CShape> CShapesCreator::GetTriangle(string &paramsStr)
 	string outlineColor;
 	string fillColor;
 
-	strm >> action >> vertex1.m_x >> vertex1.m_y >> vertex2.m_x >> vertex2.m_y >> vertex3.m_x >> vertex2.m_y >> outlineColor >> fillColor;
+	strm >> action >> vertex1.m_x >> vertex1.m_y >> vertex2.m_x >> vertex2.m_y >> vertex3.m_x >> vertex3.m_y >> outlineColor >> fillColor;
 	return make_unique<CTriangle>(vertex1, vertex2, vertex3, outlineColor, fillColor);
 }

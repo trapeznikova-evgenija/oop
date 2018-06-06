@@ -1,7 +1,7 @@
 #pragma once
 #include "IShape.h"
 
-class CShape : public IShape
+class CShape : public virtual IShape
 {
 public:
 	CShape(string & outlineColor);

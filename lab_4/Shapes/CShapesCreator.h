@@ -11,9 +11,9 @@ class CShapesCreator
 public:
 	CShapesCreator() = default;
 
-	unique_ptr<CShape> GetTriangle(string & paramsStr);
-	unique_ptr<CShape> GetRectangle(string & paramsStr);
-	unique_ptr<CShape> GetCircle(string & paramsStr);
+	unique_ptr<IShape> GetTriangle(string & paramsStr);
+	unique_ptr<IShape> GetRectangle(string & paramsStr);
+	unique_ptr<IShape> GetCircle(string & paramsStr);
 
 private:
 

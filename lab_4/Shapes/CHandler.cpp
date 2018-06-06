@@ -88,20 +88,21 @@ bool CHandler::CheckValidityLineSegment(string & params)
 	return true;
 }
 
-const vector<unique_ptr<CShape>>& CHandler::GetShapesArray() const
+const vector<unique_ptr<IShape>>& CHandler::GetShapesArray() const
 {
 	return m_shapesArray;
 }
 
 const string CHandler::GetShapeWithMinPerimetr() const
 {
-	auto FindMinElement = [](const unique_ptr<CShape>& shapeOne, const unique_ptr<CShape>& shapeTwo)
+	auto FindMinElement = [](const unique_ptr<IShape>& shapeOne, const unique_ptr<IShape>& shapeTwo)
 	{
 		return shapeOne->GetPerimeter() < shapeTwo->GetPerimeter();
 	};
 
 	auto result = min_element(m_shapesArray.begin(), m_shapesArray.end(), FindMinElement);
 
+	auto resultStr = (*result)->ToString();
 	if (result != m_shapesArray.end())
 	{
 		cout << "Shape with min perimetr " << endl;
@@ -112,13 +113,14 @@ const string CHandler::GetShapeWithMinPerimetr() const
 
 const void CHandler::GetShapeWithMaxArea() const
 {
-	auto FinMaxElement = [](const unique_ptr<CShape>& shapeOne, const unique_ptr<CShape>& shapeTwo)
+	auto FinMaxElement = [](const unique_ptr<IShape>& shapeOne, const unique_ptr<IShape>& shapeTwo)
 	{
 		return shapeOne->GetArea() > shapeTwo->GetArea();
 	};
 
 	auto result = max_element(m_shapesArray.begin(), m_shapesArray.end(), FinMaxElement);
 
+	auto resultStr = (*result)->ToString();
 	if (result != m_shapesArray.end())
 	{
 		cout << "Shape with max area " << endl;
