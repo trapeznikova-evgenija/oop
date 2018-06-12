@@ -38,11 +38,6 @@ TEST_CASE("CTriangle Class Tests")
 
 	string resultString = "triangle perimetr 40 area 60 outlineColor red fillColor blue";
 	CHECK(triangle.ToString() == resultString);
-	//string paramStr = "triangle 0 0 0 8 15 0 red blue";
-	//unique_ptr<CShape> ptrShape =  shapesCreator.GetTriangle(paramStr);
-	//vector<unique_ptr<CShape>> m_shapesArray =  handler.GetShapesArray();
-	//m_shapesArray.push_back(move(shapesCreator.GetTriangle(paramStr)));
-	//CHECK(handler.GetShapeWithMinPerimetr() == resultString);
 }
 
 TEST_CASE("CRectangle Class Tests")
@@ -91,5 +86,14 @@ TEST_CASE("CCircle Class Tests")
 
 	CHECK(circle.GetArea() == 1963.4954084936207740391521145497);
 	CHECK(circle.GetPerimeter() == 157.07963267948966192313216916398);
-
 }
+
+/*
+TEST_CASE("Test Shapes With Max Area and Min Perimeter")
+{
+	stringstream strstream;
+	CShapesCreator shapesCreator;
+	CHandler handler(shapesCreator, cin, cout, strstream);
+
+
+}*/

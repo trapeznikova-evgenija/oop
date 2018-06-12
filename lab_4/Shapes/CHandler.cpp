@@ -88,6 +88,11 @@ bool CHandler::CheckValidityLineSegment(string & params)
 	return true;
 }
 
+void CHandler::EmptyVector()
+{
+	m_shapesArray.clear();
+}
+
 const vector<unique_ptr<IShape>>& CHandler::GetShapesArray() const
 {
 	return m_shapesArray;
@@ -111,11 +116,11 @@ const string CHandler::GetShapeWithMinPerimetr() const
     return "";
 }
 
-const void CHandler::GetShapeWithMaxArea() const
+const string CHandler::GetShapeWithMaxArea() const
 {
 	auto FinMaxElement = [](const unique_ptr<IShape>& shapeOne, const unique_ptr<IShape>& shapeTwo)
 	{
-		return shapeOne->GetArea() > shapeTwo->GetArea();
+		return shapeOne->GetArea() < shapeTwo->GetArea();
 	};
 
 	auto result = max_element(m_shapesArray.begin(), m_shapesArray.end(), FinMaxElement);
@@ -124,6 +129,7 @@ const void CHandler::GetShapeWithMaxArea() const
 	if (result != m_shapesArray.end())
 	{
 		cout << "Shape with max area " << endl;
-		cout << (*result)->ToString() << endl;
+		return (*result)->ToString();
 	}
+	return "";
 }

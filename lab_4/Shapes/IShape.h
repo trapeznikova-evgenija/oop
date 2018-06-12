@@ -5,6 +5,8 @@ using namespace std;
 class IShape
 {
 public:
+	virtual ~IShape() = default;
+
 	IShape() = default;
 	virtual double GetArea() const = 0;
 	virtual double GetPerimeter() const = 0;
