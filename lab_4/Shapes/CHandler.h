@@ -21,9 +21,6 @@ public:
 	const vector<unique_ptr<IShape>>& GetShapesArray() const;
 	const string GetShapeWithMinPerimetr() const;
 	const string GetShapeWithMaxArea() const;
-
-	void EmptyVector();
-
 private:
 	typedef map<string, function<bool(stringstream & args, CShapesCreator & shapesCreator)>> ActionMap;
 

@@ -88,11 +88,6 @@ bool CHandler::CheckValidityLineSegment(string & params)
 	return true;
 }
 
-void CHandler::EmptyVector()
-{
-	m_shapesArray.clear();
-}
-
 const vector<unique_ptr<IShape>>& CHandler::GetShapesArray() const
 {
 	return m_shapesArray;

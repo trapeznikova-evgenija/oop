@@ -87,13 +87,3 @@ TEST_CASE("CCircle Class Tests")
 	CHECK(circle.GetArea() == 1963.4954084936207740391521145497);
 	CHECK(circle.GetPerimeter() == 157.07963267948966192313216916398);
 }
-
-/*
-TEST_CASE("Test Shapes With Max Area and Min Perimeter")
-{
-	stringstream strstream;
-	CShapesCreator shapesCreator;
-	CHandler handler(shapesCreator, cin, cout, strstream);
-
-
-}*/
