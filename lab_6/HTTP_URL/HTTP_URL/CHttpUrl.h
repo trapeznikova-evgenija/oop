@@ -21,7 +21,7 @@ public:
 	string GetDocument() const;
 	Protocol GetProtocol() const; 
 	unsigned short GetPort() const;
-
+	
 	void CheckUrl(string const& url);
 	Protocol AddProtocolValue(string const& protocol);
 	unsigned short AddPortValue(string const& port);

@@ -13,7 +13,24 @@ CHttpUrl::CHttpUrl(string const& domain, string const& document, Protocol protoc
 	m_document(document),
 	m_protocol(protocol)
 {
+	if (domain.empty())
+	{
+		throw CUrlParsingError("You enter empty domain");
+	}
 
+	string protocolStr = "";
+
+	if (protocol == HTTP)
+	{
+		protocolStr = "http://";
+	} else if (protocol == HTTPS)
+	{
+		protocolStr = "https://";
+	}
+
+	m_document = AddDocumentValue(document);
+
+	m_url = protocolStr + m_domain + m_document;
 }
 
 CHttpUrl::CHttpUrl(string const& domain, string const& document, Protocol protocol, unsigned short port) :
@@ -58,6 +75,7 @@ unsigned short CHttpUrl::AddPortValue(string const& portNumber)
 {
 	if (portNumber.empty())
 	{
+		cout << "static_cast<unsigned short>(m_protocol) " << endl;
 		return static_cast<unsigned short>(m_protocol);
 	}
 
@@ -98,37 +116,10 @@ void CHttpUrl::CheckUrl(string const& url)
 		throw CUrlParsingError("URL was not validated");
 	}
 
-	try
-	{
-		m_protocol = AddProtocolValue(partsUrl[1]);
-	} catch (CUrlParsingError error)
-	{
-		cout << error.what() << endl;
-	}
-
-	try
-	{
-		m_domain = AddDomainValue(partsUrl[2]);
-	} catch (CUrlParsingError error)
-	{
-		cout << error.what() << endl;
-	}
-
-	try
-	{
-		m_port = AddPortValue(partsUrl[3]);
-	} catch (CUrlParsingError error)
-	{
-		cout << error.what() << endl;
-	}
-
-	try
-	{
-		m_document = AddDocumentValue(partsUrl[4]);
-	} catch (CUrlParsingError error)
-	{
-		cout << error.what() << endl;
-	}
+	m_protocol = AddProtocolValue(partsUrl[1]);
+	m_domain = AddDomainValue(partsUrl[2]);
+	m_port = AddPortValue(partsUrl[3]);
+	m_document = AddDocumentValue(partsUrl[4]);	
 }
 
 string CHttpUrl::GetURL() const
